@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0032b5;
+  --color-primary-container: #0344ec;
+  --color-on-primary: #ffffff;
+  --color-primary-fixed: #dde1ff;
+  --color-primary-fixed-dim: #b8c3ff;
+  --color-on-primary-fixed: #001356;
+  --color-on-primary-fixed-variant: #0035be;
+
+  --color-secondary: #585e6c;
+  --color-secondary-container: #dde2f3;
+  --color-on-secondary: #ffffff;
+  --color-secondary-fixed: #dde2f3;
+  --color-secondary-fixed-dim: #c1c6d7;
+  --color-on-secondary-fixed: #161c27;
+  --color-on-secondary-fixed-variant: #414754;
+
+  --color-tertiary: #6c3400;
+  --color-tertiary-container: #8f4700;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-fixed: #ffdcc6;
+  --color-tertiary-fixed-dim: #ffb784;
+  --color-on-tertiary-fixed: #301400;
+  --color-on-tertiary-fixed-variant: #713700;
+
+  --color-surface: #f7f9fb;
+  --color-surface-dim: #d8dadc;
+  --color-surface-bright: #f7f9fb;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f2f4f6;
+  --color-surface-container: #eceef0;
+  --color-surface-container-high: #e6e8ea;
+  --color-surface-container-highest: #e0e3e5;
+
+  --color-on-surface: #191c1e;
+  --color-on-surface-variant: #454652;
+  
+  --color-outline: #757684;
+  --color-outline-variant: #c5c5d4;
+
+  --color-error: #ba1a1a;
+  --color-error-container: #ffdad6;
+  --color-on-error: #ffffff;
+  --color-on-error-container: #93000a;
+
+  --color-background: #f7f9fb;
+  --color-on-background: #191c1e;
+  
+  --font-headline: "Manrope", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-label: "Inter", sans-serif;
+}
+
+@layer components {
+  .primary-gradient {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-container) 100%);
+  }
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  .ambient-shadow {
+    box-shadow: 0px 12px 32px rgba(25, 28, 30, 0.04);
+  }
+  .ghost-border {
+    border: 1px solid rgba(197, 197, 212, 0.15); /* outline-variant opacity */
+  }
+  .gradient-text {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-container) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgba(197, 197, 212, 0.5); /* outline-variant */
+    border-radius: 20px;
+  }
+  .custom-scrollbar:hover::-webkit-scrollbar-thumb {
+    background-color: rgba(117, 118, 132, 0.5); /* outline */
+  }
+}
+
+:root {
+  transition: all 0.3s ease;
+}
+
+/* Mocking specific PRD Base Light Themes */
+:root[data-theme="mint-green"] {
+  --color-primary: #006c4b;
+  --color-primary-container: #88f8c6;
+  --color-on-primary: #ffffff;
+  --color-background: #fbfdf9;
+  --color-surface: #fbfdf9;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f5f7f3;
+  --color-surface-container: #eff1ed;
+  --color-surface-container-high: #e9ebe7;
+  --color-on-background: #191c1a;
+  --color-on-surface: #191c1a;
+  --color-on-surface-variant: #404944;
+  --color-outline: #707973;
+}
+
+:root[data-theme="rose-pink"] {
+  --color-primary: #9b4055;
+  --color-primary-container: #ffd9e0;
+  --color-background: #fff8f8;
+  --color-surface: #fff8f8;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #fff1f2;
+  --color-surface-container: #ffebed;
+  --color-surface-container-high: #ffe4e8;
+  --color-on-background: #201a1b;
+  --color-on-surface: #201a1b;
+  --color-on-surface-variant: #524346;
+  --color-outline: #857375;
+}
+
+:root[data-theme="cloud-gray"] {
+  --color-primary: #475d92;
+  --color-primary-container: #d8e2ff;
+  --color-background: #fdfbff;
+  --color-surface: #fdfbff;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f4f3f7;
+  --color-surface-container: #eeedf1;
+  --color-surface-container-high: #e8e7ec;
+  --color-on-background: #1a1b1e;
+  --color-on-surface: #1a1b1e;
+  --color-on-surface-variant: #44474e;
+  --color-outline: #74777f;
+}
+
+:root[data-theme="sunset-orange"] {
+  --color-primary: #aa3600;
+  --color-primary-container: #ffdbcc;
+  --color-background: #fff8f6;
+  --color-surface: #fff8f6;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #fff1ec;
+  --color-surface-container: #ffebe4;
+  --color-surface-container-high: #ffe4dc;
+  --color-on-background: #221a15;
+  --color-on-surface: #221a15;
+  --color-on-surface-variant: #53433c;
+  --color-outline: #86736a;
+}
+
+/* Gradients over body */
+body[data-gradient="subtle-glow"] {
+  background: radial-gradient(circle at 15% 15%, var(--color-primary-container) 0%, var(--color-background) 30%);
+}
+body[data-gradient="angular-bright"] {
+  background: linear-gradient(135deg, var(--color-background) 50%, var(--color-surface-container-highest) 100%);
+}
+body[data-gradient="soft-radial"] {
+  background: radial-gradient(ellipse at bottom, var(--color-surface-container-highest) 0%, var(--color-background) 70%);
+}
+body[data-gradient="clean-wave"] {
+  background: linear-gradient(to right, var(--color-background) 0%, var(--color-surface-container-low) 50%, var(--color-background) 100%);
+}
